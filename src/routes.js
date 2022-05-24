@@ -36,6 +36,6 @@ routes.get('/', (req, res) => res.json({ hello: 'world' }));
 
 // routes.use(authMiddleware);
 
-routes.post('/log/parse', LogController.parse);
+routes.post('/log', LogController.store);
 
 export default routes;

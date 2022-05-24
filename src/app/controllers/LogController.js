@@ -37,11 +37,13 @@ class LogController {
       },
     */
 
+    // console.log(parsedData);
+
     const context_data = parsedData.context_message?.$;
     /* START_PROBLEM | END_PROBLEM */
     const context_type = context_data?.name;
 
-    const toolMessage = parsedData.tool_message;
+    const toolMessage = parsedData.tool_message || parsedData;
 
     const semantic_event = toolMessage.semantic_event?.length
       ? toolMessage.semantic_event[0].$
@@ -87,13 +89,13 @@ class LogController {
 
     if (context_type === 'END_PROBLEM') {
       return res.json(
-        LogRepository.closeAttempt(attemptId, { endDate: new Date() })
+        LogRepository.updateAttempt(attemptId, { endDate: new Date() })
       );
     }
 
-    console.log(semantic_event);
+    // console.log(semantic_event);
     if (!context_type && !semantic_event_type) {
-      //request com o id da sessão, bem útil no futuro
+      // request com o id da sessão, bem útil no futuro
       console.log('Request não mapeada');
       return res.json({ notSaved: true, parsedData });
     }
@@ -118,7 +120,9 @@ class LogController {
       });
     }
 
-    return res.json(LogRepository.updateQuestion(questionName, questionData));
+    // return res.json();
+    LogRepository.updateQuestion(questionName, questionData);
+    return res.json(LogRepository.getAttempt(attemptId));
   }
 }
 

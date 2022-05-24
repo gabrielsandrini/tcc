@@ -8,6 +8,7 @@
     "dev:debug": "nodemon --inspect src/server.js",
     "queue": "nodemon src/queue.js",
     "build": "sucrase ./src -d ./dist --transforms imports",
+    "serve": "http-server ./src/assets/CTAT/ -c-1",
     "start": "node dist/server.js"
   },
   "dependencies": {
@@ -29,6 +30,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-prettier": "^4.0.0",
+    "http-server": "^14.1.0",
     "nodemon": "^2.0.16",
     "sucrase": "^3.21.0"
   }

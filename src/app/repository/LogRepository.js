@@ -1,9 +1,12 @@
 class LogRepository {
   constructor() {
-    this.data = {};
+    this.data = {
+      questions: {},
+    };
   }
 
   newAttempt(data) {
+    console.log('newAttempt');
     this.data = { ...data };
     return { ...this.data };
   }
@@ -20,10 +23,16 @@ class LogRepository {
   }
 
   updateQuestion(question, data) {
-    if (!this.data.questions[question]?.length) {
+    console.log('updateQuestion', this.data?.questions);
+    console.log('data', data);
+    /* if (!this.data?.questions) {
+      this.data.questions[question] = [];
+    } */
+    if (!this.data?.questions[question]?.length) {
       this.data.questions[question] = [];
     }
-    this.data.questions[question].concat(data);
+    console.log(this.data.questions[question]);
+    this.data = this.data.questions[question].concat(data);
 
     return { ...this.data };
   }

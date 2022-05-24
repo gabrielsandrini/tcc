@@ -6,15 +6,12 @@ class LogRepository {
   }
 
   newAttempt(data) {
-    // console.log('newAttempt');
     this.data = { ...data };
     return { ...this.data };
   }
 
   // eslint-disable-next-line no-unused-vars
   getAttempt(attemptId) {
-    // this.data.find((i) => i.id === attemptId);
-    console.log(this.data);
     return { ...this.data };
   }
 

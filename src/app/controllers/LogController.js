@@ -37,32 +37,38 @@ class LogController {
       },
     */
 
-    // console.log(parsedData);
-
     const context_data = parsedData.context_message?.$;
     /* START_PROBLEM | END_PROBLEM */
     const context_type = context_data?.name;
 
-    const toolMessage = parsedData.tool_message || parsedData;
+    /*
+      data.tutor_message = RESULT requests
+      data.tool_message = ATTEMPT requests
+      data = START_PROBLEM | END_PROBLEM requests
+    */
+    const toolMessage =
+      parsedData.tutor_message || parsedData.tool_message || parsedData;
 
     const semantic_event = toolMessage.semantic_event?.length
       ? toolMessage.semantic_event[0].$
       : null;
+    /* ATTEMPT | RESULT | HINT */
     const semantic_event_type = semantic_event?.name;
 
     const event_descriptor = toolMessage.event_descriptor?.length
       ? toolMessage.event_descriptor[0]
       : null;
     const questionName = event_descriptor?.selection;
-    const event_descriptor_action = event_descriptor?.action;
-    const event_input = event_descriptor?.input;
+    const event_descriptor_action = event_descriptor?.action[0];
+    const event_input = event_descriptor?.input[0];
 
     const { custom_field } = toolMessage;
     const parsed_custom_field = custom_field?.reduce(
-      (acc, current) => ({ ...acc, [current.name]: current.value }),
+      (acc, current) => ({ ...acc, [current.name]: current.value[0] }),
       {}
     );
 
+    /* CORRECT | INCORRECT */
     const action_evaluation = toolMessage.action_evaluation?.length
       ? toolMessage.action_evaluation[0]
       : null;
@@ -93,10 +99,15 @@ class LogController {
       );
     }
 
-    // console.log(semantic_event);
     if (!context_type && !semantic_event_type) {
       // request com o id da sessão, bem útil no futuro
       console.log('Request não mapeada');
+      console.log(
+        'semantic_event',
+        semantic_event,
+        'context_type',
+        context_type
+      );
       return res.json({ notSaved: true, parsedData });
     }
 

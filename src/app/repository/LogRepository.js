@@ -2,6 +2,7 @@ class LogRepository {
   constructor() {
     this.data = {
       questions: {},
+      hint_requests: [],
     };
   }
 
@@ -25,6 +26,14 @@ class LogRepository {
       this.data.questions[question] = [];
     }
     this.data.questions[question] = this.data.questions[question].concat(data);
+
+    return { ...this.data };
+  }
+
+  updateHint(hint) {
+    const newHints = this.data.hint_requests.concat(hint);
+    // console.log('aaaa', JSON.stringify({ hint, newHints }));
+    this.data = { ...this.data, hint_requests: newHints };
 
     return { ...this.data };
   }

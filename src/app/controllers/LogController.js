@@ -15,7 +15,7 @@ class LogController {
       questions:{
         [question-name(event_descriptor.selection)]:[
           {
-            semantic_event_type: 'ATTEMPT' | 'RESULT' | 'HINT'
+            semantic_event_name: 'ATTEMPT' | 'RESULT' | 'HINT'
             event_descriptor: {
               action: string
               input: string
@@ -53,7 +53,7 @@ class LogController {
       ? toolMessage.semantic_event[0].$
       : null;
     /* ATTEMPT | RESULT | HINT */
-    const semantic_event_type = semantic_event?.name;
+    const semantic_event_name = semantic_event?.name;
 
     const event_descriptor = toolMessage.event_descriptor?.length
       ? toolMessage.event_descriptor[0]
@@ -99,7 +99,7 @@ class LogController {
       );
     }
 
-    if (!context_type && !semantic_event_type) {
+    if (!context_type && !semantic_event_name) {
       // request com o id da sessão, bem útil no futuro
       console.log('Request não mapeada');
       console.log(
@@ -112,7 +112,7 @@ class LogController {
     }
 
     const questionData = {
-      semantic_event_type,
+      semantic_event_name,
       event_descriptor: {
         action: event_descriptor_action,
         input: event_input,
@@ -131,9 +131,17 @@ class LogController {
       });
     }
 
-    // return res.json();
+    if (semantic_event_name === 'HINT_REQUEST') {
+      LogRepository.updateHint(questionData);
+
+      return res.json({
+        hint: true,
+        saved: LogRepository.getAttempt(attemptId),
+        parsedData,
+      });
+    }
     LogRepository.updateQuestion(questionName, questionData);
-    return res.json(LogRepository.getAttempt(attemptId));
+    return res.json({ saved: LogRepository.getAttempt(attemptId), parsedData });
   }
 }
 

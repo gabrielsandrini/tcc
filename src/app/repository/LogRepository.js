@@ -24,46 +24,51 @@ class LogRepository {
       student_name,
       questionary,
     });
-    return schema.save();
+    const result = await schema.save();
+    return result;
   }
 
   async getAttempt(attempt_id) {
-    // const result = await Attempt.findOne({ attempt_id });
-    return { getAttempt: true, attempt_id };
+    const result = await Attempt.findOne({ attempt_id });
+    // return { getAttempt: true, attempt_id };
+    return result;
   }
 
   async finishAttempt(attempt_id) {
-    const schema = await Attempt.findOneAndUpdate(
+    const query = Attempt.findOneAndUpdate(
       { attempt_id },
       { done: true, end_date: new Date() }
     );
-    return schema;
+    const result = await query;
+    return result;
   }
 
   async updateQuestion({ attempt_id, answer }) {
-    const schema = await Attempt.findOneAndUpdate(
+    const query = Attempt.findOneAndUpdate(
       { attempt_id },
       {
         $push: {
           answers: answer,
         },
-      },
-      this.logError
+      }
     );
-    return schema;
+
+    const result = await query;
+    return result;
   }
 
   async updateHint({ attempt_id, hint }) {
-    const schema = await Attempt.findOneAndUpdate(
+    const query = await Attempt.findOneAndUpdate(
       { attempt_id },
       {
         $push: {
           hints: hint,
         },
-      },
-      this.logError
+      }
     );
-    return schema;
+
+    const result = await query;
+    return result;
   }
 }
 

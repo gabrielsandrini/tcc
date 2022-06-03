@@ -150,10 +150,12 @@ class LogController {
         parsedData,
       });
     }
+
     await LogRepository.updateQuestion({
       attempt_id: attemptId.concat,
       answer: answerData,
     });
+
     return res.json({
       saved: await LogRepository.getAttempt(attemptId),
       parsedData,

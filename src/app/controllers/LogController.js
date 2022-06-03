@@ -1,5 +1,6 @@
 import xmlParser from 'xml2js';
 import LogRepository from '../repository/LogRepository';
+import { AnswerModel } from '../schemas/Attempts';
 
 class LogController {
   async store(req, res) {
@@ -60,13 +61,16 @@ class LogController {
       : null;
     const questionName = event_descriptor?.selection;
     const event_descriptor_action = event_descriptor?.action[0];
-    const event_input = event_descriptor?.input[0];
+    const event_descriptor_input = event_descriptor?.input[0];
 
     const { custom_field } = toolMessage;
     const parsed_custom_field = custom_field?.reduce(
       (acc, current) => ({ ...acc, [current.name]: current.value[0] }),
       {}
     );
+    const custom_field_tool_event_time = parsed_custom_field?.tool_event_time;
+    const custom_field_tutor_input = parsed_custom_field?.tutor_input;
+    const custom_field_step_id = parsed_custom_field?.step_id;
 
     /* CORRECT | INCORRECT */
     const action_evaluation = toolMessage.action_evaluation?.length
@@ -82,25 +86,27 @@ class LogController {
     const skill_probability = skill?.$?.probability;
 
     if (context_type === 'START_PROBLEM') {
-      const newAttempt = {
-        attemptId,
-        student: '',
-        problem: '',
-        startDate: new Date(),
-        endDate: null,
-        questions: {},
-      };
-      return res.json(LogRepository.newAttempt(newAttempt));
+      const savedAttempt = await LogRepository.getAttempt(attemptId);
+      console.log(savedAttempt);
+      if (savedAttempt) {
+        return res.json({ saved: false, reason: 'Attempt already exists' });
+      }
+
+      const response = await LogRepository.newAttempt({
+        attempt_id: attemptId,
+        student_ra: 'notNull',
+        student_name: 'John',
+        questionary: '123abc',
+      });
+      return res.json(response);
     }
 
     if (context_type === 'END_PROBLEM') {
-      return res.json(
-        LogRepository.updateAttempt(attemptId, { endDate: new Date() })
-      );
+      return res.json(await LogRepository.finishAttempt(attemptId));
     }
 
     if (!context_type && !semantic_event_name) {
-      // request com o id da sessão, bem útil no futuro
+      // request com o id da sessão, bem util no futuro
       console.log('Request não mapeada');
       console.log(
         'semantic_event',
@@ -111,37 +117,47 @@ class LogController {
       return res.json({ notSaved: true, parsedData });
     }
 
-    const questionData = {
+    const answerData = new AnswerModel({
+      question_name: questionName,
       semantic_event_name,
       event_descriptor: {
         action: event_descriptor_action,
-        input: event_input,
+        input: event_descriptor_input,
       },
-      custom_field: parsed_custom_field,
+      custom_field: {
+        tool_event_time: custom_field_tool_event_time,
+        tutor_input: custom_field_tutor_input,
+        step_id: custom_field_step_id,
+      },
       action_evaluation,
       tutor_advice,
-    };
-    if (skill) {
-      Object.assign(questionData, {
-        skill: {
-          category: skill_category,
-          name: skill_name,
-          probability: skill_probability,
-        },
-      });
-    }
+      skill: {
+        probability: skill_probability,
+        name: skill_name,
+        category: skill_category,
+      },
+    });
 
     if (semantic_event_name === 'HINT_REQUEST') {
-      LogRepository.updateHint(questionData);
+      await LogRepository.updateHint({
+        attempt_id: attemptId,
+        hint: answerData,
+      });
 
       return res.json({
         hint: true,
-        saved: LogRepository.getAttempt(attemptId),
+        saved: await LogRepository.getAttempt(attemptId),
         parsedData,
       });
     }
-    LogRepository.updateQuestion(questionName, questionData);
-    return res.json({ saved: LogRepository.getAttempt(attemptId), parsedData });
+    await LogRepository.updateQuestion({
+      attempt_id: attemptId.concat,
+      answer: answerData,
+    });
+    return res.json({
+      saved: await LogRepository.getAttempt(attemptId),
+      parsedData,
+    });
   }
 }
 

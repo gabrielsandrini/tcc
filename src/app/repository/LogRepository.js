@@ -44,6 +44,7 @@ class LogRepository {
   }
 
   async updateQuestion({ attempt_id, answer }) {
+    console.log('answer', answer);
     const query = Attempt.findOneAndUpdate(
       { attempt_id },
       {

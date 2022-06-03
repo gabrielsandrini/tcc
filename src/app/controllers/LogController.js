@@ -129,7 +129,7 @@ class LogController {
         tutor_input: custom_field_tutor_input,
         step_id: custom_field_step_id,
       },
-      action_evaluation,
+      // action_evaluation,
       tutor_advice,
       skill: {
         probability: skill_probability,
@@ -152,7 +152,7 @@ class LogController {
     }
 
     await LogRepository.updateQuestion({
-      attempt_id: attemptId.concat,
+      attempt_id: attemptId,
       answer: answerData,
     });
 

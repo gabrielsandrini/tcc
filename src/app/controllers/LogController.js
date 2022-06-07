@@ -4,9 +4,10 @@ import { AnswerModel } from '../schemas/Attempts';
 
 class LogController {
   async store(req, res) {
-    const parsedData = await xmlParser.parseStringPromise(req.body.message);
+    const { message, questionary_key, user_name, user_id, attempt_id } =
+      req.body;
 
-    const attemptId = 'id123';
+    const parsedData = await xmlParser.parseStringPromise(message);
 
     /*
       student:
@@ -86,23 +87,31 @@ class LogController {
     const skill_probability = skill?.$?.probability;
 
     if (context_type === 'START_PROBLEM') {
-      const savedAttempt = await LogRepository.getAttempt(attemptId);
+      const savedAttempt = await LogRepository.getAttempt(attempt_id);
       console.log(savedAttempt);
       if (savedAttempt) {
         return res.json({ saved: false, reason: 'Attempt already exists' });
       }
 
+      console.log(attempt_id, user_id, user_name, questionary_key);
+      console.log(
+        attempt_id,
+        typeof user_id,
+        typeof user_name,
+        typeof questionary_key
+      );
+
       const response = await LogRepository.newAttempt({
-        attempt_id: attemptId,
-        student_ra: 'notNull',
-        student_name: 'John',
-        questionary: '123abc',
+        attempt_id,
+        user_id,
+        user_name,
+        questionary_key,
       });
       return res.json(response);
     }
 
     if (context_type === 'END_PROBLEM') {
-      return res.json(await LogRepository.finishAttempt(attemptId));
+      return res.json(await LogRepository.finishAttempt(attempt_id));
     }
 
     if (!context_type && !semantic_event_name) {
@@ -129,7 +138,7 @@ class LogController {
         tutor_input: custom_field_tutor_input,
         step_id: custom_field_step_id,
       },
-      // action_evaluation,
+      action_evaluation,
       tutor_advice,
       skill: {
         probability: skill_probability,
@@ -140,24 +149,24 @@ class LogController {
 
     if (semantic_event_name === 'HINT_REQUEST') {
       await LogRepository.updateHint({
-        attempt_id: attemptId,
+        attempt_id,
         hint: answerData,
       });
 
       return res.json({
         hint: true,
-        saved: await LogRepository.getAttempt(attemptId),
+        saved: await LogRepository.getAttempt(attempt_id),
         parsedData,
       });
     }
 
     await LogRepository.updateQuestion({
-      attempt_id: attemptId,
+      attempt_id,
       answer: answerData,
     });
 
     return res.json({
-      saved: await LogRepository.getAttempt(attemptId),
+      saved: await LogRepository.getAttempt(attempt_id),
       parsedData,
     });
   }

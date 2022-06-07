@@ -25,9 +25,9 @@ export const AnswerModel = mongoose.model('Answer', AnswerSchema);
 const AttemptSchema = new mongoose.Schema(
   {
     attempt_id: { type: String, required: true },
-    student_ra: { type: String, required: true },
-    student_name: { type: String, required: true },
-    questionary: { type: String, required: true },
+    questionary_key: { type: String, required: true },
+    user_id: { type: String, required: true },
+    user_name: { type: String, required: false },
     end_date: { type: Date, required: false },
     done: { type: Boolean, required: false, default: false },
     answers: { type: [AnswerSchema], required: false, default: [] },

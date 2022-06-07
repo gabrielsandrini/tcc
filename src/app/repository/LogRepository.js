@@ -17,12 +17,12 @@ class LogRepository {
     }
   }
 
-  async newAttempt({ attempt_id, student_ra, student_name, questionary }) {
+  async newAttempt({ attempt_id, user_id, user_name, questionary_key }) {
     const schema = new Attempt({
       attempt_id,
-      student_ra,
-      student_name,
-      questionary,
+      user_id,
+      user_name,
+      questionary_key,
     });
     const result = await schema.save();
     return result;

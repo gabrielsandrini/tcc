@@ -60,7 +60,9 @@ class LogController {
     const event_descriptor = toolMessage.event_descriptor?.length
       ? toolMessage.event_descriptor[0]
       : null;
-    const questionName = event_descriptor?.selection;
+    const questionName = event_descriptor?.selection.length
+      ? event_descriptor?.selection[0]
+      : null;
     const event_descriptor_action = event_descriptor?.action[0];
     const event_descriptor_input = event_descriptor?.input[0];
 
@@ -126,6 +128,7 @@ class LogController {
       return res.json({ notSaved: true, parsedData });
     }
 
+    console.log(questionName);
     const answerData = new AnswerModel({
       question_name: questionName,
       semantic_event_name,

@@ -24,7 +24,7 @@ const getMaxAndMinValues = (array, field) => {
 export const getMinAndMaxDates = (array) =>
   getMaxAndMinValues(array, 'createdAt');
 
-export const getSkills = (answersArray) => {
+export const getSkills = (answersArray, attempt_id) => {
   /* Get the last logged values of each skill */
   const skills_by_attempt = answersArray
     .map((answer) => answer.skill)
@@ -36,6 +36,7 @@ export const getSkills = (answersArray) => {
           name: skill.name,
           category: skill.category,
           value: skill.probability,
+          attempt_id,
         };
       }
 
@@ -72,7 +73,9 @@ export const getBestSkills = (skills) => {
 };
 
 export const getBestSkillsFromAttempts = (attempts) => {
-  const attemptsSkills = attempts.map((attempt) => getSkills(attempt.answers));
+  const attemptsSkills = attempts.map((attempt) =>
+    getSkills(attempt.answers, attempt.id)
+  );
 
   const bestSkills =
     attemptsSkills.length > 1
@@ -81,3 +84,6 @@ export const getBestSkillsFromAttempts = (attempts) => {
 
   return bestSkills;
 };
+
+export const filterOneAttempt = (attempts, attempt_id) =>
+  attempts.find((attempt) => attempt.id === attempt_id);

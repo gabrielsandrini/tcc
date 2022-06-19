@@ -73,7 +73,13 @@ class LogRepository {
   }
 
   async getByFormId(form_id) {
-    const result = await Attempt.find({ form_id });
+    const result = await Attempt.find({ questionary_key: form_id });
+    return result;
+  }
+
+  async getByFormIdAndStudent({ form_id, student_id }) {
+    console.log('form_id', form_id);
+    const result = await Attempt.find({ form_id, student_id });
     return result;
   }
 }

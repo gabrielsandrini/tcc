@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import LogController from './app/controllers/LogController';
+import ReportController from './app/controllers/ReportController';
 /*
 import Brute from 'express-brute';
 import BruteRedis from 'express-brute-redis';
@@ -37,5 +38,9 @@ routes.get('/', (req, res) => res.json({ hello: 'world' }));
 // routes.use(authMiddleware);
 
 routes.post('/log', LogController.store);
+routes.get('/relatorio/turma', ReportController.relatorioTurma);
+routes.get('/relatorio/aluno', ReportController.relatorioAluno);
+routes.get('/relatorio/attempt', ReportController.relatorioQuestao);
+routes.get('/relatorio/turma/questoes', ReportController.relatorioQuestaoTurma);
 
 export default routes;

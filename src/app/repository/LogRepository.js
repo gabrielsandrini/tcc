@@ -71,6 +71,11 @@ class LogRepository {
     const result = await query;
     return result;
   }
+
+  async getByFormId(form_id) {
+    const result = await Attempt.find({ form_id });
+    return result;
+  }
 }
 
 export default new LogRepository();

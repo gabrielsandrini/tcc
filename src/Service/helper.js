@@ -14,6 +14,9 @@ const groupBy = (array, field) => {
 
 export const groupByStudent = (array) => groupBy(array, 'user_id');
 
+export const groupByQuestion = (questionArray) =>
+  groupBy(questionArray, 'question_name');
+
 const getMaxAndMinValues = (array, field) => {
   const max = Math.max(...array.map((item) => item[field]));
   const min = Math.min(...array.map((item) => item[field]));

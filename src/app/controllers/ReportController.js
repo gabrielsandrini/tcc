@@ -3,6 +3,7 @@ import {
   getBestSkillsFromAttempts,
   getMinAndMaxDates,
   getSkills,
+  groupByQuestion,
   groupByStudent,
 } from '../../Service/helper';
 import LogRepository from '../repository/LogRepository';
@@ -10,6 +11,10 @@ import LogRepository from '../repository/LogRepository';
 class ReportController {
   async relatorioTurma(req, res) {
     const { form_id } = req.query;
+
+    if (!form_id) {
+      throw new Error('Form ID não enviado');
+    }
 
     const attempts = await LogRepository.getByFormId(form_id);
 
@@ -48,6 +53,14 @@ class ReportController {
 
   async relatorioAluno(req, res) {
     const { form_id, student_id } = req.query;
+
+    if (!form_id) {
+      throw new Error('Form ID não enviado');
+    }
+
+    if (!student_id) {
+      throw new Error('ID do estudante não enviado');
+    }
 
     const student_attempts = await LogRepository.getByFormIdAndStudent({
       form_id,
@@ -113,7 +126,30 @@ class ReportController {
     */
   }
 
-  relatorioQuestao(req, res) {
+  async relatorioQuestao(req, res) {
+    const { attempt_id } = req.query;
+
+    if (!attempt_id) {
+      throw new Error('ID da tentativa não enviado');
+    }
+
+    const attempt = await LogRepository.getAttempt(attempt_id);
+
+    const groupedAnswers = groupByQuestion(attempt.answers);
+
+    const questionsReport = groupedAnswers; // Object.values(groupedAnswers);
+
+    const response = {
+      id: attempt.id,
+      aluno: {
+        nome: attempt.user_name,
+        prontuario: attempt.user_id,
+      },
+      questions: questionsReport,
+    };
+
+    return res.json(response);
+    /*
     const data = {
       aluno_id: 1,
       aluno_nome: 'Aluno 1',
@@ -129,8 +165,7 @@ class ReportController {
         },
       ],
     };
-
-    return res.json(data);
+ */
   }
 
   relatorioQuestaoTurma(req, res) {

@@ -28,12 +28,6 @@ class LogRepository {
     return result;
   }
 
-  async getAttempt(attempt_id) {
-    const result = await Attempt.findOne({ attempt_id });
-    // return { getAttempt: true, attempt_id };
-    return result;
-  }
-
   async finishAttempt(attempt_id) {
     const query = Attempt.findOneAndUpdate(
       { attempt_id },
@@ -78,8 +72,15 @@ class LogRepository {
   }
 
   async getByFormIdAndStudent({ form_id, student_id }) {
-    console.log('form_id', form_id);
-    const result = await Attempt.find({ form_id, student_id });
+    const result = await Attempt.find({
+      questionary_key: form_id,
+      user_id: student_id,
+    });
+    return result;
+  }
+
+  async getAttempt(attempt_id) {
+    const result = await Attempt.findOne({ attempt_id });
     return result;
   }
 }

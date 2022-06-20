@@ -90,3 +90,37 @@ export const getBestSkillsFromAttempts = (attempts) => {
 
 export const filterOneAttempt = (attempts, attempt_id) =>
   attempts.find((attempt) => attempt.id === attempt_id);
+
+export const getQuestionsReport = (questions_logs) => {
+  const partial_report = {
+    failures: 0,
+    success: 0,
+    hints_requests: 0,
+    hints_given: 0,
+    total_attempts: 0,
+  };
+
+  questions_logs.forEach((logs) =>
+    logs.forEach((log) => {
+      if (log.semantic_event_name === 'ATTEMPT') {
+        partial_report.total_attempts += 1;
+      } else if (log.action_evaluation === 'INCORRECT') {
+        partial_report.failures += 1;
+      } else if (log.action_evaluation === 'CORRECT') {
+        partial_report.success += 1;
+      }
+    })
+  );
+  console.log('questions_logs', questions_logs);
+
+  const response = {
+    id: questions_logs[0].question_name,
+    name: questions_logs[0].question_name,
+    failures: partial_report.failures,
+    success: partial_report.success,
+    hints_requests: partial_report.hints_requests,
+    total_attempts: partial_report.total_attempts,
+  };
+
+  return response;
+};

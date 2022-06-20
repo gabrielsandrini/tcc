@@ -2,6 +2,7 @@ import {
   filterOneAttempt,
   getBestSkillsFromAttempts,
   getMinAndMaxDates,
+  getQuestionsReport,
   getSkills,
   groupByQuestion,
   groupByStudent,
@@ -137,7 +138,7 @@ class ReportController {
 
     const groupedAnswers = groupByQuestion(attempt.answers);
 
-    const questionsReport = groupedAnswers; // Object.values(groupedAnswers);
+    const questionsReport = getQuestionsReport(Object.values(groupedAnswers));
 
     const response = {
       id: attempt.id,

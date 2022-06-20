@@ -170,7 +170,7 @@ class ReportController {
   }
 
   relatorioQuestaoTurma(req, res) {
-    const data = {
+    /* {
       aluno_id: 1,
       aluno_nome: 'Aluno 1',
       form_token: 'token',
@@ -185,8 +185,8 @@ class ReportController {
         },
       ],
     };
-
-    return res.json(data);
+ */
+    return res.json({});
   }
 }
 

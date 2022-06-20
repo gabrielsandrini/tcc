@@ -9,6 +9,7 @@ class LogController {
 
     const parsedData = await xmlParser.parseStringPromise(message);
 
+    // return res.json(parsedData);
     /*
       student:
       problem:
@@ -77,7 +78,7 @@ class LogController {
 
     /* CORRECT | INCORRECT */
     const action_evaluation = toolMessage.action_evaluation?.length
-      ? toolMessage.action_evaluation[0]
+      ? toolMessage.action_evaluation[0].$
       : null;
     const tutor_advice = toolMessage.tutor_advice?.length
       ? toolMessage.tutor_advice[0]

@@ -6,6 +6,7 @@ import {
   getSkills,
   groupByQuestion,
   groupByStudent,
+  sumQuestionReports,
 } from '../../Service/helper';
 import LogRepository from '../repository/LogRepository';
 
@@ -169,24 +170,26 @@ class ReportController {
  */
   }
 
-  relatorioQuestaoTurma(req, res) {
-    /* {
-      aluno_id: 1,
-      aluno_nome: 'Aluno 1',
-      form_token: 'token',
-      reports: [
-        {
-          id: 1,
-          questao: 'Questão 1',
-          falhas: 2,
-          sucessos: 3,
-          dicas: 4,
-          tentativas: 5,
-        },
-      ],
-    };
- */
-    return res.json({});
+  async relatorioQuestaoTurma(req, res) {
+    const { form_token } = req.query;
+
+    if (!form_token) {
+      throw new Error('Form token não enviado');
+    }
+
+    const attempts = await LogRepository.getByFormId(form_token);
+
+    const responses = attempts.map((attempt) => {
+      const groupedAnswers = groupByQuestion(attempt.answers);
+
+      const questionsReport = getQuestionsReport(Object.values(groupedAnswers));
+
+      return questionsReport;
+    });
+
+    const sum = sumQuestionReports(responses);
+
+    return res.json({ report: Object.values(sum) });
   }
 }
 

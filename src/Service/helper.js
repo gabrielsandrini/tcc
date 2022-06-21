@@ -98,7 +98,6 @@ export const getQuestionsReport = (questions_logs) => {
       failures: 0,
       success: 0,
       hints_requests: 0,
-      hints_given: 0,
       total_attempts: 0,
     };
 
@@ -120,4 +119,28 @@ export const getQuestionsReport = (questions_logs) => {
   }, []);
 
   return question_reports;
+};
+
+export const sumQuestionReports = (question_reports) => {
+  const sum = question_reports.reduce((acc, report) => {
+    report.forEach((value) => {
+      const { question_name } = value;
+      if (!question_name) {
+        return;
+      }
+
+      if (acc[question_name]) {
+        acc[question_name].failures += value.failures;
+        acc[question_name].success += value.success;
+        acc[question_name].hints_requests += value.hints_requests;
+        acc[question_name].total_attempts += value.total_attempts;
+      } else {
+        acc[question_name] = value;
+      }
+    });
+
+    return acc;
+  }, {});
+
+  return sum;
 };

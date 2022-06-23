@@ -7,7 +7,7 @@ import {
   groupByQuestion,
   groupByStudent,
   sumQuestionReports,
-} from '../../Service/helper';
+} from '../services/helper';
 import LogRepository from '../repository/LogRepository';
 
 class ReportController {

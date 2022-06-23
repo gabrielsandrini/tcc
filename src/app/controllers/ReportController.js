@@ -82,13 +82,13 @@ class ReportController {
         prontuario: best_attempt.user_id,
       },
       best_attempt: {
-        id: best_attempt.id,
+        id: best_attempt.attempt_id,
         date: best_attempt.createdAt,
         skills: bestSkills,
         done: best_attempt.done,
       },
       attempts: student_attempts.map((attempt) => ({
-        id: attempt.id,
+        id: attempt.attempt_id,
         date: attempt.createdAt,
         skills: getSkills(attempt.answers),
         done: attempt.done,
@@ -142,12 +142,13 @@ class ReportController {
     const questionsReport = getQuestionsReport(Object.values(groupedAnswers));
 
     const response = {
-      id: attempt.id,
+      id: attempt.attempt_id,
+      form_id: attempt.questionary_key,
       aluno: {
         nome: attempt.user_name,
         prontuario: attempt.user_id,
       },
-      questions: questionsReport,
+      report: questionsReport,
     };
 
     return res.json(response);
@@ -189,7 +190,9 @@ class ReportController {
 
     const sum = sumQuestionReports(responses);
 
-    return res.json({ report: Object.values(sum) });
+    return res.json({
+      report: Object.values(sum),
+    });
   }
 }
 

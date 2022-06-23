@@ -78,8 +78,9 @@ class LogController {
 
     /* CORRECT | INCORRECT */
     const action_evaluation = toolMessage.action_evaluation?.length
-      ? toolMessage.action_evaluation[0].$
+      ? toolMessage.action_evaluation[0].$ || toolMessage.action_evaluation[0]
       : null;
+    console.log(toolMessage.action_evaluation, action_evaluation);
     const tutor_advice = toolMessage.tutor_advice?.length
       ? toolMessage.tutor_advice[0]
       : null;

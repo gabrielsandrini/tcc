@@ -1,0 +1,949 @@
+<?xml version="1.0" standalone="yes"?>
+
+<stateGraph firstCheckAllStates="true" caseInsensitive="true" unordered="false" lockWidget="true" hintPolicy="Use Both Kinds of Bias" version="4.0" suppressStudentFeedback="Show All Feedback" highlightRightSelection="true" confirmDone="false" startStateNodeName="%(startStateNodeName)%" tutorType="Example-tracing Tutor" outOfOrderMessage="Em vez da etapa em que voc&#234; est&#225; trabalhando, trabalhe na etapa destacada.">
+    <startNodeMessages>
+        <message>
+            <verb>SendNoteProperty</verb>
+            <properties>
+                <MessageType>StartProblem</MessageType>
+                <ProblemName>1-4+1-6</ProblemName>
+            </properties>
+        </message>
+        <message>
+            <verb>SendNoteProperty</verb>
+            <properties>
+                <MessageType>StartStateEnd</MessageType>
+            </properties>
+        </message>
+    </startNodeMessages>
+    <node locked="false" doneState="false">
+        <text>inicio</text>
+        <uniqueID>1</uniqueID>
+        <dimension>
+            <x>766</x>
+            <y>93</y>
+        </dimension>
+    </node>
+    <node locked="false" doneState="false">
+        <text>state7</text>
+        <uniqueID>8</uniqueID>
+        <dimension>
+            <x>653</x>
+            <y>314</y>
+        </dimension>
+    </node>
+    <node locked="false" doneState="false">
+        <text>state8</text>
+        <uniqueID>9</uniqueID>
+        <dimension>
+            <x>876</x>
+            <y>413</y>
+        </dimension>
+    </node>
+    <node locked="false" doneState="false">
+        <text>state9</text>
+        <uniqueID>10</uniqueID>
+        <dimension>
+            <x>1169</x>
+            <y>535</y>
+        </dimension>
+    </node>
+    <node locked="false" doneState="true">
+        <text>Done</text>
+        <uniqueID>11</uniqueID>
+        <dimension>
+            <x>1223</x>
+            <y>770</y>
+        </dimension>
+    </node>
+    <node locked="false" doneState="false">
+        <text>state11</text>
+        <uniqueID>12</uniqueID>
+        <dimension>
+            <x>103</x>
+            <y>218</y>
+        </dimension>
+    </node>
+    <node locked="false" doneState="false">
+        <text>state12</text>
+        <uniqueID>13</uniqueID>
+        <dimension>
+            <x>52</x>
+            <y>53</y>
+        </dimension>
+    </node>
+    <node locked="false" doneState="false">
+        <text>state13</text>
+        <uniqueID>14</uniqueID>
+        <dimension>
+            <x>59</x>
+            <y>147</y>
+        </dimension>
+    </node>
+    <node locked="false" doneState="false">
+        <text>state14</text>
+        <uniqueID>15</uniqueID>
+        <dimension>
+            <x>66</x>
+            <y>444</y>
+        </dimension>
+    </node>
+    <node locked="false" doneState="false">
+        <text>state15</text>
+        <uniqueID>16</uniqueID>
+        <dimension>
+            <x>138</x>
+            <y>555</y>
+        </dimension>
+    </node>
+    <node locked="false" doneState="false">
+        <text>state16</text>
+        <uniqueID>17</uniqueID>
+        <dimension>
+            <x>51</x>
+            <y>342</y>
+        </dimension>
+    </node>
+    <node locked="false" doneState="false">
+        <text>state17</text>
+        <uniqueID>18</uniqueID>
+        <dimension>
+            <x>422</x>
+            <y>707</y>
+        </dimension>
+    </node>
+    <node locked="false" doneState="false">
+        <text>state19</text>
+        <uniqueID>20</uniqueID>
+        <dimension>
+            <x>335</x>
+            <y>596</y>
+        </dimension>
+    </node>
+    <node locked="false" doneState="false">
+        <text>state20</text>
+        <uniqueID>21</uniqueID>
+        <dimension>
+            <x>690</x>
+            <y>800</y>
+        </dimension>
+    </node>
+    <edge>
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>13</uniqueID>
+            <message>
+                <verb>NotePropertySet</verb>
+                <properties>
+                    <MessageType>InterfaceAction</MessageType>
+                    <transaction_id>7de3f6af-c012-6d53-e1d2-4adda7d0ff95</transaction_id>
+                    <Selection>
+                        <value>formasRepresentacao</value>
+                    </Selection>
+                    <Action>
+                        <value>UpdateRadioButton</value>
+                    </Action>
+                    <Input>
+                        <value>formasRepresentacao4: Descri&#231;&#227;o Narrativa, Pseudoc&#243;digo e Fluxograma</value>
+                    </Input>
+                </properties>
+            </message>
+            <buggyMessage>No, this is not correct.</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Scratch &#233; a plataforma para constru&#231;&#227;o de jogo.</hintMessage>
+            <hintMessage>Programa &#233; o algoritmo escrito em linguagem de programa&#231;&#227;o.</hintMessage>
+            <hintMessage>Pseudoc&#243;digo e portugol s&#227;o equivalentes. &#201; a forma de representa&#231;&#227;o de algoritmo usando o portugu&#234;s estruturado.</hintMessage>
+            <hintMessage>Teste de mesa se refere a etapa a ser realizada quando o algoritmo est&#225; pronto, feito para validar o seu algoritmo.</hintMessage>
+            <hintMessage>Tente a op&#231;&#227;o: Descri&#231;&#227;o Narrativa, Pseudoc&#243;digo e Fluxograma</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Correct Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">formasRepresentacao</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">UpdateRadioButton</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">formasRepresentacao4: Descri&#231;&#227;o Narrativa, Pseudoc&#243;digo e Fluxograma</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>formasRepresentacaoAlgoritmo conhecimentosTeoricos</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>1</sourceID>
+        <destID>8</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>15</uniqueID>
+            <message>
+                <verb>NotePropertySet</verb>
+                <properties>
+                    <MessageType>InterfaceAction</MessageType>
+                    <transaction_id>da46d076-9919-2a26-4013-76652d54399e</transaction_id>
+                    <Selection>
+                        <value>dadosEntrada</value>
+                    </Selection>
+                    <Action>
+                        <value>UpdateRadioButton</value>
+                    </Action>
+                    <Input>
+                        <value>dadosEntrada3: Dist&#226;ncia Total Percorrida e Total de Combust&#237;vel</value>
+                    </Input>
+                </properties>
+            </message>
+            <buggyMessage>No, this is not correct.</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Dados de entrada s&#227;o aqueles dados que fornecemos para o algoritmo.</hintMessage>
+            <hintMessage>Normalmente, s&#227;o dados conhecidos que a partir deles outros valores ser&#227;o calculados.</hintMessage>
+            <hintMessage>Tente a op&#231;&#227;o: Dist&#226;ncia Total Percorrida e Total de Combust&#237;vel</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Correct Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">dadosEntrada</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">UpdateRadioButton</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">dadosEntrada3: Dist&#226;ncia Total Percorrida e Total de Combust&#237;vel</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>interpretacaoProblemas conhecimentosTeoricos</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>8</sourceID>
+        <destID>9</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>17</uniqueID>
+            <message>
+                <verb>NotePropertySet</verb>
+                <properties>
+                    <MessageType>InterfaceAction</MessageType>
+                    <transaction_id>e55bd591-4aa0-e13d-5bd9-22c0f09d2cd1</transaction_id>
+                    <Selection>
+                        <value>pseudocodigo</value>
+                    </Selection>
+                    <Action>
+                        <value>UpdateRadioButton</value>
+                    </Action>
+                    <Input>
+                        <value>pseudocodigo2: Ler um dado de entrada</value>
+                    </Input>
+                </properties>
+            </message>
+            <buggyMessage>No, this is not correct.</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Qual &#233; o tipo de valor que essas vari&#225;veis armazenar&#227;o?</hintMessage>
+            <hintMessage>Observe os dados: dist&#226;ncias, consumo m&#233;dio e combust&#237;vel, normalmente, s&#227;o n&#250;meros inteiros ou com casas decimais?</hintMessage>
+            <hintMessage>Tente colocar "real"</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Correct Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">pseudocodigo</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">UpdateRadioButton</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">pseudocodigo2: Ler um dado de entrada</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>portugol conhecimentosTeoricos</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>9</sourceID>
+        <destID>10</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>19</uniqueID>
+            <message>
+                <verb>NotePropertySet</verb>
+                <properties>
+                    <MessageType>InterfaceAction</MessageType>
+                    <transaction_id>4acea739-c2ef-1bb2-5cad-3a3b3bc5dc39</transaction_id>
+                    <Selection>
+                        <value>done</value>
+                    </Selection>
+                    <Action>
+                        <value>ButtonPressed</value>
+                    </Action>
+                    <Input>
+                        <value>-1</value>
+                    </Input>
+                </properties>
+            </message>
+            <buggyMessage>No, this is not correct.</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Please click on the highlighted button.</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Correct Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">done</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">ButtonPressed</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">-1</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>unnamed</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>10</sourceID>
+        <destID>11</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="false" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>21</uniqueID>
+            <message>
+                <verb>NotePropertySet</verb>
+                <properties>
+                    <MessageType>InterfaceAction</MessageType>
+                    <transaction_id>7bc6dc19-d743-78b9-b118-9382d1cbfafe</transaction_id>
+                    <Selection>
+                        <value>formasRepresentacao</value>
+                    </Selection>
+                    <Action>
+                        <value>UpdateRadioButton</value>
+                    </Action>
+                    <Input>
+                        <value>formasRepresentacao1: Descri&#231;&#227;o Narrativa, Scratch e Programa</value>
+                    </Input>
+                </properties>
+            </message>
+            <buggyMessage>Essa alternativa est&#225; incorreta. Voc&#234; pode tentar novamente ou verficar as dicas clicando em "Hint" :)</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Please choose among the highlighted radio buttons.</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Buggy Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">formasRepresentacao</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">UpdateRadioButton</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">formasRepresentacao1: Descri&#231;&#227;o Narrativa, Scratch e Programa</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>formasRepresentacaoAlgoritmo conhecimentosTeoricos</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>1</sourceID>
+        <destID>12</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="false" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>25</uniqueID>
+            <message>
+                <verb>NotePropertySet</verb>
+                <properties>
+                    <MessageType>InterfaceAction</MessageType>
+                    <transaction_id>7f2ffd78-ab66-a45a-7369-0862327a06ff</transaction_id>
+                    <Selection>
+                        <value>formasRepresentacao</value>
+                    </Selection>
+                    <Action>
+                        <value>UpdateRadioButton</value>
+                    </Action>
+                    <Input>
+                        <value>formasRepresentacao2: Descri&#231;&#227;o Narrativa, Pseudoc&#243;digo e Portugol</value>
+                    </Input>
+                </properties>
+            </message>
+            <buggyMessage>Essa alternativa est&#225; incorreta. Voc&#234; pode tentar novamente ou verficar as dicas clicando em "Hint" :)</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Please choose among the highlighted radio buttons.</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Buggy Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">formasRepresentacao</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">UpdateRadioButton</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">formasRepresentacao2: Descri&#231;&#227;o Narrativa, Pseudoc&#243;digo e Portugol</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>formasRepresentacaoAlgoritmo conhecimentosTeoricos</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>1</sourceID>
+        <destID>13</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="false" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>27</uniqueID>
+            <message>
+                <verb>NotePropertySet</verb>
+                <properties>
+                    <MessageType>InterfaceAction</MessageType>
+                    <transaction_id>890373be-9efe-25f7-fc49-c3421def7796</transaction_id>
+                    <Selection>
+                        <value>formasRepresentacao</value>
+                    </Selection>
+                    <Action>
+                        <value>UpdateRadioButton</value>
+                    </Action>
+                    <Input>
+                        <value>formasRepresentacao3:  Portugol, Teste de Mesa e Programa</value>
+                    </Input>
+                </properties>
+            </message>
+            <buggyMessage>Essa alternativa est&#225; incorreta. Voc&#234; pode tentar novamente ou verficar as dicas clicando em "Hint" :)</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Please choose among the highlighted radio buttons.</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Buggy Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">formasRepresentacao</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">UpdateRadioButton</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">formasRepresentacao3:  Portugol, Teste de Mesa e Programa</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>formasRepresentacaoAlgoritmo conhecimentosTeoricos</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>1</sourceID>
+        <destID>14</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="false" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>31</uniqueID>
+            <message>
+                <verb>NotePropertySet</verb>
+                <properties>
+                    <MessageType>InterfaceAction</MessageType>
+                    <transaction_id>9a7b8ab9-eb22-1da4-1b56-54c0bf461f8c</transaction_id>
+                    <Selection>
+                        <value>dadosEntrada</value>
+                    </Selection>
+                    <Action>
+                        <value>UpdateRadioButton</value>
+                    </Action>
+                    <Input>
+                        <value>dadosEntrada1: Dist&#226;ncia Total Percorrida e Consumo M&#233;dio</value>
+                    </Input>
+                </properties>
+            </message>
+            <buggyMessage>Essa alternativa est&#225; incorreta. Voc&#234; pode tentar novamente ou verficar as dicas clicando em "Hint" :)</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Please choose among the highlighted radio buttons.</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Buggy Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">dadosEntrada</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">UpdateRadioButton</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">dadosEntrada1: Dist&#226;ncia Total Percorrida e Consumo M&#233;dio</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>interpretacaoProblemas conhecimentosTeoricos</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>8</sourceID>
+        <destID>15</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="false" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>33</uniqueID>
+            <message>
+                <verb>NotePropertySet</verb>
+                <properties>
+                    <MessageType>InterfaceAction</MessageType>
+                    <transaction_id>02ef35ce-754f-6d00-5ca4-f73836c6732e</transaction_id>
+                    <Selection>
+                        <value>dadosEntrada</value>
+                    </Selection>
+                    <Action>
+                        <value>UpdateRadioButton</value>
+                    </Action>
+                    <Input>
+                        <value>dadosEntrada2: Consumo M&#233;dio e Total de Combust&#237;vel</value>
+                    </Input>
+                </properties>
+            </message>
+            <buggyMessage>Essa alternativa est&#225; incorreta. Voc&#234; pode tentar novamente ou verficar as dicas clicando em "Hint" :)</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Please choose among the highlighted radio buttons.</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Buggy Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">dadosEntrada</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">UpdateRadioButton</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">dadosEntrada2: Consumo M&#233;dio e Total de Combust&#237;vel</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>interpretacaoProblemas conhecimentosTeoricos</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>8</sourceID>
+        <destID>16</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="false" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>35</uniqueID>
+            <message>
+                <verb>NotePropertySet</verb>
+                <properties>
+                    <MessageType>InterfaceAction</MessageType>
+                    <transaction_id>e58790e5-cd7e-f1c8-832f-12845a4ba11f</transaction_id>
+                    <Selection>
+                        <value>dadosEntrada</value>
+                    </Selection>
+                    <Action>
+                        <value>UpdateRadioButton</value>
+                    </Action>
+                    <Input>
+                        <value>dadosEntrada4: Dist&#226;ncia Total Percorrida, Total de Combust&#237;vel e Consumo M&#233;dio</value>
+                    </Input>
+                </properties>
+            </message>
+            <buggyMessage>Essa alternativa est&#225; incorreta. Voc&#234; pode tentar novamente ou verficar as dicas clicando em "Hint" :)</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Please choose among the highlighted radio buttons.</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Buggy Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">dadosEntrada</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">UpdateRadioButton</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">dadosEntrada4: Dist&#226;ncia Total Percorrida, Total de Combust&#237;vel e Consumo M&#233;dio</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>interpretacaoProblemas conhecimentosTeoricos</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>8</sourceID>
+        <destID>17</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="false" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>37</uniqueID>
+            <message>
+                <verb>NotePropertySet</verb>
+                <properties>
+                    <MessageType>InterfaceAction</MessageType>
+                    <transaction_id>df7299ff-d966-0ccb-3f60-3f1266bfb9f3</transaction_id>
+                    <Selection>
+                        <value>pseudocodigo</value>
+                    </Selection>
+                    <Action>
+                        <value>UpdateRadioButton</value>
+                    </Action>
+                    <Input>
+                        <value>pseudocodigo1: Escrever na tela</value>
+                    </Input>
+                </properties>
+            </message>
+            <buggyMessage>Essa alternativa est&#225; incorreta. Voc&#234; pode tentar novamente ou verficar as dicas clicando em "Hint" :)</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Please choose among the highlighted radio buttons.</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Buggy Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">pseudocodigo</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">UpdateRadioButton</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">pseudocodigo1: Escrever na tela</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>portugol conhecimentosTeoricos</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>9</sourceID>
+        <destID>18</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="false" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>44</uniqueID>
+            <message>
+                <verb>NotePropertySet</verb>
+                <properties>
+                    <MessageType>InterfaceAction</MessageType>
+                    <transaction_id>be55184c-59c4-22c1-21ee-586e1c265d1e</transaction_id>
+                    <Selection>
+                        <value>pseudocodigo</value>
+                    </Selection>
+                    <Action>
+                        <value>UpdateRadioButton</value>
+                    </Action>
+                    <Input>
+                        <value>pseudocodigo4: Representar uma vari&#225;vel do tipo inteiro</value>
+                    </Input>
+                </properties>
+            </message>
+            <buggyMessage>Essa alternativa est&#225; incorreta. Voc&#234; pode tentar novamente ou verficar as dicas clicando em "Hint" :)</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Please choose among the highlighted radio buttons.</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Buggy Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">pseudocodigo</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">UpdateRadioButton</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">pseudocodigo4: Representar uma vari&#225;vel do tipo inteiro</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>portugol conhecimentosTeoricos</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>9</sourceID>
+        <destID>21</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="false" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>42</uniqueID>
+            <message>
+                <verb>NotePropertySet</verb>
+                <properties>
+                    <MessageType>InterfaceAction</MessageType>
+                    <transaction_id>2864a745-9973-6028-faf1-9210715520fe</transaction_id>
+                    <Selection>
+                        <value>pseudocodigo</value>
+                    </Selection>
+                    <Action>
+                        <value>UpdateRadioButton</value>
+                    </Action>
+                    <Input>
+                        <value>pseudocodigo3: Somar dois valores</value>
+                    </Input>
+                </properties>
+            </message>
+            <buggyMessage>Essa alternativa est&#225; incorreta. Voc&#234; pode tentar novamente ou verficar as dicas clicando em "Hint" :)</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Please choose among the highlighted radio buttons.</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Buggy Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>Never Checked</checkedStatus>
+            <matchers Concatenation="true">
+                <Selection>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">pseudocodigo</matcherParameter>
+                    </matcher>
+                </Selection>
+                <Action>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">UpdateRadioButton</matcherParameter>
+                    </matcher>
+                </Action>
+                <Input>
+                    <matcher>
+                        <matcherType>ExactMatcher</matcherType>
+                        <matcherParameter name="single">pseudocodigo3: Somar dois valores</matcherParameter>
+                    </matcher>
+                </Input>
+                <Actor linkTriggered="false">Student</Actor>
+            </matchers>
+        </actionLabel>
+        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <rule>
+            <text>portugol conhecimentosTeoricos</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>9</sourceID>
+        <destID>20</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <productionRule opportunities="1">
+        <ruleName>interpretacaoProblemas</ruleName>
+        <productionSet>conhecimentosTeoricos</productionSet>
+        <label>Interpreta&#231;&#227;o de Problemas</label>
+        <hintMessage>Dados de entrada s&#227;o aqueles dados que fornecemos para o algoritmo.</hintMessage>
+        <hintMessage>Normalmente, s&#227;o dados conhecidos que a partir deles outros valores ser&#227;o calculados.</hintMessage>
+        <hintMessage>Tente colocar: "dist&#226;ncia total" e "total combust&#237;vel" na &#225;rea dos dados de entrada.</hintMessage>
+    </productionRule>
+    <productionRule opportunities="1">
+        <ruleName>portugol</ruleName>
+        <productionSet>conhecimentosTeoricos</productionSet>
+        <label>Algoritmos em Portugol</label>
+        <description>	</description>
+        <hintMessage>Qual &#233; o tipo de valor que essas vari&#225;veis armazenar&#227;o?</hintMessage>
+        <hintMessage>Observe os dados: dist&#226;ncias, consumo m&#233;dio e combust&#237;vel, normalmente, s&#227;o n&#250;meros inteiros ou com casas decimais?</hintMessage>
+        <hintMessage>Tente colocar "real"</hintMessage>
+    </productionRule>
+    <productionRule opportunities="1">
+        <ruleName>formasRepresentacaoAlgoritmo</ruleName>
+        <productionSet>conhecimentosTeoricos</productionSet>
+        <label>Representa&#231;&#227;o de Algoritmos</label>
+        <description>	</description>
+        <hintMessage>Scratch &#233; a plataforma para constru&#231;&#227;o de jogo.</hintMessage>
+        <hintMessage>Programa &#233; o algoritmo escrito em linguagem de programa&#231;&#227;o.</hintMessage>
+        <hintMessage>Pseudoc&#243;digo e portugol s&#227;o equivalentes. &#201; a forma de representa&#231;&#227;o de algoritmo usando o portugu&#234;s estruturado.</hintMessage>
+        <hintMessage>Teste de mesa se refere a etapa a ser realizada quando o algoritmo est&#225; pronto, feito para validar o seu algoritmo.</hintMessage>
+        <hintMessage>Tente a op&#231;&#227;o: descri&#231;&#227;o Narrativa, Pseudoc&#243;digo e Fluxograma</hintMessage>
+    </productionRule>
+    <EdgesGroups ordered="true"></EdgesGroups>
+</stateGraph>
+

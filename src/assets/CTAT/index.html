@@ -4,11 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CTAT</title>
+    <title>Document</title>
   </head>
+  <script>
+    function getQueryVariable(variable) {
+      var query = window.location.search.substring(1);
+      var vars = query.split('&');
+      for (var i = 0; i < vars.length; i += 1) {
+        var pair = vars[i].split('=');
+        if (pair[0] === variable) {
+          return pair[1];
+        }
+      }
+      return null;
+    }
+
+    function submitForm() {
+      const redirectUrl = './HTML/questao1.html';
+
+      const questionary_key = document.getElementById('questionary_key').value;
+      const user_id = document.getElementById('user_id').value;
+      const user_name = document.getElementById('user_name').value;
+
+      var query = new URLSearchParams();
+      query.append('questionary_key', questionary_key);
+      query.append('user_id', user_id);
+      query.append('user_name', user_name);
+      window.location.href = redirectUrl + '?' + query.toString();
+
+      console.log(redirectUrl);
+    }
+  </script>
   <body>
-    <a href="./form.html?to=.%2FHTML%2Fquestao1.html">
-      CTAT LÓGICA DE PROGRAMAÇÃO
-    </a>
+    <form
+      id="form"
+      action="#"
+      method="get"
+      style="max-width: 300px; margin: 0 auto"
+    >
+      <fieldset>
+        <label for="questionary_key">Código</label>
+        <input id="questionary_key" name="questionary_key" type="text" />
+      </fieldset>
+
+      <fieldset>
+        <label for="user_id">RA</label>
+        <input id="user_id" name="user_id" type="text" />
+        <br />
+        <label for="user_name">Nome</label>
+        <input id="user_name" name="user_name" type="text" />
+      </fieldset>
+
+      <button type="button" onclick="submitForm()">Submit</button>
+    </form>
   </body>
 </html>

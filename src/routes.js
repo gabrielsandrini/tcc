@@ -27,7 +27,6 @@ routes.post(
   validateSessionStore,
   SessionController.store
   );
-
   */
 // import authMiddleware from './app/middlewares/auth';
 

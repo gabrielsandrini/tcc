@@ -92,18 +92,9 @@ class LogController {
 
     if (context_type === 'START_PROBLEM') {
       const savedAttempt = await LogRepository.getAttempt(attempt_id);
-      console.log(savedAttempt);
       if (savedAttempt) {
         return res.json({ saved: false, reason: 'Attempt already exists' });
       }
-
-      console.log(attempt_id, user_id, user_name, questionary_key);
-      console.log(
-        attempt_id,
-        typeof user_id,
-        typeof user_name,
-        typeof questionary_key
-      );
 
       const response = await LogRepository.newAttempt({
         attempt_id,
@@ -130,7 +121,6 @@ class LogController {
       return res.json({ notSaved: true, parsedData });
     }
 
-    console.log(questionName);
     const answerData = new AnswerModel({
       question_name: questionName,
       semantic_event_name,

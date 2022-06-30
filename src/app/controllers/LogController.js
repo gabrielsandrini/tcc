@@ -90,8 +90,8 @@ class LogController {
     const skill_category = skill?.category[0];
     const skill_probability = skill?.$?.probability;
 
+    const savedAttempt = await LogRepository.getAttempt(attempt_id);
     if (context_type === 'START_PROBLEM') {
-      const savedAttempt = await LogRepository.getAttempt(attempt_id);
       if (savedAttempt) {
         return res.json({ saved: false, reason: 'Attempt already exists' });
       }
@@ -105,8 +105,8 @@ class LogController {
       return res.json(response);
     }
 
-    if (context_type === 'END_PROBLEM') {
-      return res.json(await LogRepository.finishAttempt(attempt_id));
+    if (questionName === 'done' && !savedAttempt.done) {
+      await LogRepository.finishAttempt(attempt_id);
     }
 
     if (!context_type && !semantic_event_name) {

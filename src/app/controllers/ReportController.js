@@ -1,5 +1,6 @@
 import {
   filterOneAttempt,
+  filterQuestionsReport,
   getBestSkillsFromAttempts,
   getMinAndMaxDates,
   getQuestionsReport,
@@ -141,6 +142,8 @@ class ReportController {
 
     const questionsReport = getQuestionsReport(Object.values(groupedAnswers));
 
+    const filteredQuestionsReport = filterQuestionsReport(questionsReport);
+
     const response = {
       id: attempt.attempt_id,
       form_id: attempt.questionary_key,
@@ -148,7 +151,7 @@ class ReportController {
         nome: attempt.user_name,
         prontuario: attempt.user_id,
       },
-      report: questionsReport,
+      report: filteredQuestionsReport,
     };
 
     return res.json(response);
@@ -185,7 +188,9 @@ class ReportController {
 
       const questionsReport = getQuestionsReport(Object.values(groupedAnswers));
 
-      return questionsReport;
+      const filteredQuestionsReport = filterQuestionsReport(questionsReport);
+
+      return filteredQuestionsReport;
     });
 
     const sum = sumQuestionReports(responses);

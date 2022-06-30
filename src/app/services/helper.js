@@ -105,23 +105,19 @@ export const getQuestionsReport = (questions_logs) => {
     logs.forEach((log) => {
       partial_report.question_name = log.question_name;
 
-      console.log(log);
       if (log.semantic_event_name === 'ATTEMPT') {
         partial_report.total_attempts += 1;
-        console.log('if 1', log.semantic_event_name, log.action_evaluation);
-      } else if (log.semantic_event_name === 'HINT_REQUEST') {
-        console.log('if 2', log.semantic_event_name, log.action_evaluation);
+      } else if (log.semantic_event_name === 'HINT_MSG') {
         partial_report.hints_requests += 1;
       } else if (log.action_evaluation === 'INCORRECT') {
-        console.log('if 3', log.semantic_event_name, log.action_evaluation);
         partial_report.failures += 1;
       } else if (log.action_evaluation === 'CORRECT') {
-        console.log('if 4', log.semantic_event_name, log.action_evaluation);
         partial_report.success += 1;
       }
     });
 
     // console.log(partial_report);
+    partial_report.total_attempts -= 1;
     return [...acc, partial_report];
   }, []);
 
@@ -151,3 +147,6 @@ export const sumQuestionReports = (question_reports) => {
 
   return sum;
 };
+
+export const filterQuestionsReport = (questions) =>
+  questions.filter((q) => q.question_name !== 'done');
